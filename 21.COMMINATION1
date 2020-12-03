@@ -1,0 +1,35 @@
+/*Cho hai số nguyên dương a và m. Nhiệm vụ của bạn là tìm x nhỏ nhất trong khoảng [0,m-1] sao cho a * x  ≡ 1( mod m). Ví dụ a = 3, m=11 ta tìm được x = 4 vì 4*3%11=1.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp mỗi dòng đưa vào một test. Mỗi test là bộ đôi a, m được viết cách nhau một vài khoảng trống.
+T, a, m thỏa mãn ràng buộc : 1≤T≤100; 1≤a ≤m≤100*/
+
+#include<bits/stdc++.h>
+
+using namespace std;
+int n,a[20];
+void Try(int i){
+	for(int j=0;j<=1;j++){
+		a[i]=j;
+		if(i==n)
+		{
+			for(int l=1;l<=n;l++){
+				cout<<a[l];
+			}
+			cout<<" ";
+		}
+		else Try(i+1);
+	}
+}
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		cin>>n;
+		Try(1);
+		cout<<"\n";
+	}
+}
