@@ -1,0 +1,29 @@
+Cho hai số nguyên không âm N và K. Nhiệm vụ của bạn là kiểm tra xem K = 1%K + 2%K + ..+ N%K hay không. Đưa ra 1 hoặc 0 nếu cặp N, K thỏa mãn hoặc không thỏa mãn yêu cầu bài toán. Ví dụ với N = 10, K=55 ta có kết quả là 1 vì 55= 1%55 + 2%55+3%55 + ..+ 10%55. Ngược lại, N=4, K=11 có kết quả là 0 vì 11≠1%11+ 2%11+3%11+4%11.
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp mỗi dòng đưa vào một test. Mỗi test là bộ đôi N, K được viết cách nhau một vài khoảng trống.
+T, N, K thỏa mãn ràng buộc : 1≤T≤100; 0≤N ≤1000; 0≤K ≤1012.
+
+
+
+#include<iostream>
+using namespace std;
+typedef long long int ll;
+ll n ,k;
+ll Mod(){
+	ll x = n / k ; ll y = n % k;
+	ll s1 = k*(k-1) / 2;
+	ll s2 = y *(y+1) / 2;
+	ll sum = s1*x + s2;
+	if(sum == k ) return 1 ;
+	return 0; 
+}
+main(){
+	int t ;
+	cin>> t;
+	while(t--){
+		cin >> n >> k;
+		cout << Mod()<< endl;
+	}
+}
