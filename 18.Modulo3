@@ -1,0 +1,26 @@
+Cho hai số nguyên không âm N và K. Nhiệm vụ của bạn là tìm S = 1%K + 2%K + ..+ N%K. Ví dụ với N = 10, K=2 ta có S = 1%2 + 2%2+3%2 + 4%2+5%2+6%2+7%2+8%2+9%2+10%2 = 5. Yêu cầu độ phức tạp thuật toán là hằng số
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp mỗi dòng đưa vào một test. Mỗi test là bộ đôi N, K được viết cách nhau một vài khoảng trống.
+T, N, K thỏa mãn ràng buộc : 1≤T≤100; 0≤N ≤1000; 0≤K ≤1012.
+
+#include<iostream>
+using namespace std;
+typedef unsigned long int ll;
+ll n ,k;
+ll findsum2(){
+	cin >> n >> k;
+    ll x = n / k; ll a1 = (k*(k-1))/2;
+	ll y = n % k; ll a2 = (y*(y+1))/2;
+	ll sum =   x*a1 + a2;
+	return sum;
+}	
+main(){
+	int  t ;
+	cin >> t ;
+	while(t--){
+		cout << findsum2()<< endl;		
+	}
+}
