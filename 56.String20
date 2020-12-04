@@ -1,0 +1,39 @@
+
+Cho xâu ký tự S. Nhiệm vụ của bạn là đảo ngược các từ trong S. Ví dụ S =  “I like this program very much”, ta nhận được kết quả là “much very program this like I”.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là một xâu ký tự S.
+T, S thỏa mãn ràng buộc: 1≤ T ≤100; 1≤ Length(S)≤103.
+
+#include<bits/stdc++.h>
+#include<string>
+
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		vector<string> save;
+		cin.ignore();
+		string s;
+		getline(cin,s);
+		string str="";
+		for(int i=0;i<s.length();i++){
+			if(s[i]== ' ') 
+			{
+				save.push_back(str);
+				str="";
+			}
+			else str+=s[i];
+		}
+		save.push_back(str);
+		for(int i=save.size()-1;i>0;i--){
+			cout<<save[i]<<" ";
+		}
+		cout<<save[0];
+		cout<<endl;
+	}
+}
