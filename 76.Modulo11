@@ -1,0 +1,28 @@
+Cho ba số a, b, c có thể lớn cỡ 1016. Nhiệm vụ của bạn là tính (a*b)%c.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi test trên một dòng đưa vào ba số a, b, c.
+T, a, b, c  thỏa mãn ràng buộc : 1≤T≤100; 0≤a, b, c≤1016.
+
+
+
+#include<iostream>
+using namespace std;
+typedef unsigned long long int ll;
+ll Pow(ll a ,ll b ,ll c){
+	if(b == 0) return 0 ;
+	ll s = Pow(a, b/2 ,c);
+	if( b % 2 == 0)  return (s+s)%c ;
+	return (s+s+a)%c;
+}
+main(){
+	int t ;
+	ll a,b ,c;
+	cin >> t ;
+	while(t--){
+		cin  >> a >> b >> c;
+		cout << Pow(a,b,c)<< endl;		
+	}
+}
