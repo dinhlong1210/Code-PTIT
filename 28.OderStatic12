@@ -1,0 +1,67 @@
+Cho mảng A[] gồm n số nguyên bao gồm cả số 0. Nhiệm vụ của bạn là tìm số nguyên dương nhỏ nhất không có mặt trong mảng. Ví dụ với mảng A[] = {5, 8, 3, 7, 9, 1}, ta có kết quả là 2.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test gồm hai dòng: dòng đầu tiên đưa vào n là số phần tử của mảng A[]; dòng kế tiếp đưa vào n số A[i] của mảng; các số được viết cách nhau một vài khoảng trống.
+T, n, A[i] thỏa mãn ràng buộc: 1≤ T ≤100; 1≤ n ≤106; 10-6≤ A[i] ≤106;
+
+
+Cach1:
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+int firstMissingPos(int A[], int n)
+{
+    bool present[n + 1] = { false };
+
+    for (int i = 0; i < n; i++) {
+        if (A[i] > 0 && A[i] <= n)
+            present[A[i]] = true;
+    }
+    for (int i = 1; i <= n; i++)
+        if (!present[i])
+            return i;
+    return n + 1;
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		cin>>n;
+		int a[n];
+		for(int i=0;i<n;i++){
+			cin>>a[i];
+		}
+		cout<<firstMissingPos(a,n)<<endl;
+	}
+}
+
+Cach2:
+#include<bits/stdc++.h> 
+using namespace std; 
+main(){ 
+int t; 
+cin>>t; 
+while(t--){ 
+int n; 
+cin>>n; 
+int a[n]; 
+for(int i=0;i<n;i++) cin>>a[i]; 
+int x=1; 
+while(1){ 
+	int stop=1; 
+	for(int i=0;i<n;i++){ 
+		if(a[i]==x){ 
+		stop=0; 
+		break; 
+		}
+		 
+	} 
+	if(stop==0) x++; 
+	else break; 
+	} 
+	cout<<x<<endl; 
+} 
+}
