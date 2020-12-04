@@ -1,0 +1,33 @@
+Cho số tự nhiên N được biểu diễn dưới dạng nhị phân. Hãy kiểm tra xem N có phải là số chia hết cho 5 hay không? Đưa ra “Yes” nếu N chia hết cho 5, trái lại đưa ra “No”.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là một biểu diễn nhị phân của N.
+T, N thỏa mãn ràng buộc: 1≤ T ≤100; 0≤ N ≤101000.
+
+
+#include<bits/stdc++.h>
+#include<string>
+
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		string s;
+		cin>>s;
+		long long int temp=0;
+		int count=0;
+		for(int i=s.length()-1;i>=0;i--){
+			if(s[i] == '1') 
+			{
+			temp=temp+pow(2,count);
+			}else temp=temp;
+			count++;		
+		}
+		if(temp%5==0) cout<<"Yes"<<endl;
+		else cout<<"No"<<endl;
+	}
+}
