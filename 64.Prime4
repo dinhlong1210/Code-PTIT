@@ -1,0 +1,37 @@
+Cho số tự nhiên N. Nhiệm vụ của bạn là in ra ước số nguyên tố nhỏ nhất của các số từ 1 đến N. Ước số nguyên tố nhỏ nhất của 1 là 1. Ước số nguyên tố nhỏ nhất của các số chẵn là 2. Ước số nguyên tố nhỏ nhất của các số nguyên tố là chính nó.
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số N được ghi trên một dòng.
+T, N thỏa mãn ràng buộc: 1≤T≤100; 1≤N≤10000.
+Output:
+
+#include<bits/stdc++.h>
+#define MAX 100000
+using namespace std;
+int n;
+void Eratos(){
+	cin >>  n;
+    int  ans[MAX] ;
+	for(int i= 1; i <= MAX ; i++)  ans[i] =0;
+	ans[1] =1;
+	for(int i = 2 ; i<= MAX ; i++){
+		if(ans[i]==0){
+			ans[i] = i;
+			for(int  j= 2*i ; j <= MAX ; j += i)
+			   if(ans[j] ==0) 
+			       ans[j] =i;
+		}	
+	}
+	for(int i =1 ; i<= n; i++){
+		cout << ans[i]<< " ";
+	}
+	cout << endl;
+}
+main(){
+	int t ;
+	cin >> t ;
+	while(t--){
+	Eratos();
+}
+}
