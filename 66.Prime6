@@ -1,0 +1,41 @@
+Cho số nguyên dương chẵn N>2. Hãy đưa ra cặp số nguyên tố p, q đầu tiên có tổng đúng bằng N. Ví dụ N = 6 ta có cặp số nguyên tố đầu tiên là 3 + 3 =6.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số chẵn N.
+T, N thỏa mãn ràng buộc : 1≤T≤100; 4≤N≤10000.
+
+
+#include<iostream>
+#define MAX 10000
+using namespace std;
+int n;
+void Eratos(){
+	cin >> n ;
+	bool Prime[MAX];
+	for(int p = 2; p <= MAX; p++){
+		Prime[p] = true;
+	}
+	for(int p = 2 ; p*p <= MAX; p++){
+		if(Prime[p] == true){
+			for(int i = 2*p ; i <= MAX; i +=p)
+			    Prime[i]= false;
+		}
+    }
+    for(int p = 2; p <= n; p ++){
+    	if(Prime[p] && Prime[n-p]){
+    		cout << p << " "<< n -p << endl;
+    		break;
+		}
+		 
+	}
+    
+}
+main(){
+	int t ;
+	cin >> t ;
+	while(t --){
+	Eratos();
+	}
+}
