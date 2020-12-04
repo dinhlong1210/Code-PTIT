@@ -1,0 +1,34 @@
+Cho hai số n và r, hãy tìm C(n, r)% P. Trong đó, P = 109+7.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi test là bộ đôi n, r. Các số được viết cách nhau một vài khoảng trống.
+T, n, r thỏa mãn ràng buộc : 1≤T≤100; 0≤n≤103; 1≤ r ≤800.
+
+#include<bits/stdc++.h>
+const int p = 1e9+7;
+using namespace std;
+typedef long long int ll;
+ll Tich(ll a , ll b , ll c){
+	if(b == 0) return 0;
+	ll st = Tich(a, b/2, c);
+	if( b % 2 == 0)   return (st + st) % c;
+	return (st + st + a) % c ;
+}
+ll Res(ll n, ll r, int p ){
+	ll c = 1;
+	for(int i =1 ; i <= r ; i++){
+		c = Tich(c, n-r+i, p);
+	}
+	return c ;
+}
+main(){
+	int t ;
+	ll n ,r;
+	cin >> t;
+	while(t--){
+		cin >> n >> r ;
+		cout << Res(n,r,p)/r << endl;
+	}
+}
