@@ -34,6 +34,7 @@ for(int i=hoten.size()-1;i>=0;i--)
         for(int i=x+1;i<hoten.length();i++)
     hoten[i]=toupper(hoten[i]);
         }
+        
 }}
 for(int i=0;i<x;i++)
 if(hoten[i]==' '){
