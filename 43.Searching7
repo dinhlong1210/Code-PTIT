@@ -8,6 +8,7 @@ T, N, K, A[i] thỏa mãn ràng buộc: 1≤T≤100; 1≤K < N ≤103, 1≤A[i] 
 
 
 
+
 #include<bits/stdc++.h>
 
 using namespace std;
