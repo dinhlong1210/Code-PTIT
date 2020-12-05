@@ -24,3 +24,4 @@ main(){
 		cout << findsum2()<< endl;		
 	}
 }
+
