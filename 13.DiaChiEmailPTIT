@@ -42,3 +42,4 @@ if(hoten[i]==' '){
 cout<<mail;
     return 0;
 }
+
