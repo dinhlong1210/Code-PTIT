@@ -7,6 +7,7 @@ Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test gồm ba dòng
 T, n, m, A[i], B[i] thỏa mãn ràng buộc: 1≤ T ≤100; 1≤ n, m ≤106; -108≤ A[i] ≤108.
 
 
+
 #include<bits/stdc++.h>
 
 using namespace std;
