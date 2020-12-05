@@ -1,0 +1,44 @@
+Tên người dùng sẽ được chuẩn hóa theo nguyên tắc tên được viết sau cùng, phân tách với phần tên đệm và tên bởi dấu phẩy. Các chữ cái nằm trong tên đều được viết hoa; 
+chữ cái đầu tiên của tên đệm và họ được viết hoa, các chữ cái còn lại viết thường.
+
+Input
+
+ngUyeN   vAN Nam
+
+Output
+
+Nguyen Van, NAM
+
+
+#include<iostream>
+using namespace std;
+string chuthuong(string ten){
+
+    for(int i=0;i<ten.length();i++)
+    ten[i]=tolower(ten[i]);
+    return ten;}
+int main(){
+string hoten;
+getline(cin,hoten);
+hoten=chuthuong(hoten);
+string phay=",";
+int x;
+int dem=0;
+hoten[0]=toupper(hoten[0]);
+for(int i=hoten.size()-1;i>=0;i--)
+{
+        if(hoten[i]==' '){
+        dem++;
+        if(dem==1){ x=i;
+        hoten.insert(x,phay);
+        for(int i=x+1;i<hoten.length();i++)
+    hoten[i]=toupper(hoten[i]);
+        }
+}}
+for(int i=0;i<x;i++)
+if(hoten[i]==' '){
+    hoten[i+1]=toupper(hoten[i+1]);}
+    cout<<hoten;
+
+    return 0;
+}
