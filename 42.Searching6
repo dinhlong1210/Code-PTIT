@@ -7,6 +7,7 @@ Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test gồm hai d
 T, n, A[i] thỏa mãn ràng buộc: 1≤T≤100; 2≤N ≤103, -106≤A[i] ≤106.
 
 
+
 Cach1: #include<bits/stdc++.h>
 
 using namespace std;
